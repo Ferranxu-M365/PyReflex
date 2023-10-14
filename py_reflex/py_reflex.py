@@ -1,10 +1,12 @@
 import reflex as rx
 
+from py_reflex.app_style import style
+
 from py_reflex.views.index.index import index
 from py_reflex.views.about.about import about
 
 # Add state and page to the app.
-app = rx.App()
+app = rx.App(style=style)
 
 app.add_page(index, route="/")
 
