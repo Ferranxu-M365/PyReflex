@@ -1,5 +1,5 @@
 import reflex as rx
 
 config = rx.Config(
-    app_name="PyReflex",
+    app_name="py_reflex",
 )
