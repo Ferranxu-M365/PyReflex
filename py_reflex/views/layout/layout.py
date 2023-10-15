@@ -1,8 +1,14 @@
 import reflex as rx
 
+from .layout_style import *
+
+from ..partials.header.header import header
+from ..partials.footer.footer import footer
+
 def layout(children: rx.Component) -> rx.Component:
   return rx.grid(
     rx.grid_item(
+      header(),
       row_start=1,
       col_span=3,
     ),
@@ -10,18 +16,14 @@ def layout(children: rx.Component) -> rx.Component:
       children,
       row_start=2,
       col_start=2,
-      border= "1px solid white",
-      border_radius= "5px",
-      box_shadow= "white 1px 1px 10px 1px",
-      padding= "10px",
-      background_color= "#150015",
+      style=main_content_style,
     ),
     rx.grid_item(
+      footer(),
       row_start=3,
       col_span=3,
     ),
-    template_rows="8% 84% 8%",
+    template_rows="10% 86% 4%",
     template_columns="30% 40% 30%",
-    height="100vh",
-    overflow="hidden",
+    style=layout_style,
   )
