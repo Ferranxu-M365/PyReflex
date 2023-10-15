@@ -20,14 +20,16 @@ navbar_item_style = {
 }
 
 contact_section_style = {
-  "justify_content":"end",
+  "justify_content": "end",
+  "align_items": "center",
+  "gap": "10px",
 }
 
 linkedin_btn = {
-  "padding":"5px",
+  "padding": "5px",
   "border": "1px solid #0077B5",
-  "border_radius":"5px",
-  "line_height":"12px",
+  "border_radius": "5px",
+  "line_height": "12px",
   "_hover": {
     "box_shadow": "#0077B5 0px 0px 10px -1px",
     "background_color": "rgba(0, 119, 181, 0.2)",
@@ -45,4 +47,13 @@ linkedin_img = {
   "width": "25px",
   "height": "auto",
   "display": "inline",
+}
+
+github_btn_style = {
+  "width": "30px",
+  "height": "auto",
+  "border_radius": "50px",
+  "_hover": {
+    "box_shadow": "0px 0px 9px white",
+  },
 }
