@@ -1,5 +1,21 @@
+import reflex as rx
+
 from ...app_state import AppState
 
-# Layout controls some state vars to make a communication between the Header and the Footer
+# Layout's duty is to control the state of the Header and the Footer
 class LayoutState(AppState):
+  # Header
   github_header_btn_disabled: bool = True
+
+  # Footer
+  github_visible: str = False
+
+  def github_btn_handler(self):
+    self.set_github_header_btn_disabled(False)
+    self.set_github_visible(True)
+
+  @rx.var
+  def catchme_btn_hide(self) -> bool:
+    if self.github_visible:
+      return True
+    return False
