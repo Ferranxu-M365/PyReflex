@@ -1,14 +1,14 @@
 /* sidebar */
-@keyframes slidelefttoright {
+@keyframes sliderighttoleft {
   from {
-    right: 250px;
+    right: -250px;
   }
   to {
     right: 0px;
   }
 }
 
-@keyframes sliderighttoleft {
+@keyframes slidelefttoright {
   from {
     left: -250px;
   }
