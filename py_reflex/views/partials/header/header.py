@@ -15,11 +15,14 @@ def header() -> rx.Component:
         style=navbar_item_style,
         color=rx.cond(LayoutState.current_page == "/", "rgb(255,255,50)", "none"), # active page
       ),
-      rx.link(
-        "Play with the API",
-        href="#",
-        style=navbar_item_style,
-        color=rx.cond(LayoutState.current_page == "/theApi", "rgb(255,255,50)", "none"), # active page
+      rx.tooltip(
+        rx.link(
+          "Play with the API",
+          href="#",
+          style=navbar_disabled_item_style,
+          #color=rx.cond(LayoutState.current_page == "/theApi", "rgb(255,255,50)", "none"), # active page
+        ),
+        label="Coming soon!",
       ),
       rx.link(
       "About",

@@ -25,6 +25,14 @@ small_navbar_heading = {
   "text_align": "center",
 }
 
+navbar_disabled_item_style = {
+  "cursor": "default",
+  "color": "grey",
+  "_hover": {
+    "text_decoration": "none",
+  },
+}
+
 navbar_item_style = {
   "_hover": {
     "color": "rgb(255,255,50)",
