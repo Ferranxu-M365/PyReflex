@@ -15,7 +15,7 @@ def layout(children: rx.Component) -> rx.Component:
     rx.grid_item(
       children,
       row_start=2,
-      col_start=2,
+      grid_column=2,
       style=main_content_style,
     ),
     rx.grid_item(
@@ -24,6 +24,6 @@ def layout(children: rx.Component) -> rx.Component:
       col_span=3,
     ),
     template_rows="10% 86% 4%",
-    template_columns="30% 40% 30%",
+    grid_template_columns=["0% 100% 0%", "10% 80% 10%", "20% 60% 20%", "30% 40% 30%", "30% 40% 30%"],
     style=layout_style,
   )

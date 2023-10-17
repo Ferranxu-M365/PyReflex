@@ -1,32 +1,41 @@
 import reflex as rx
 
 from .header_style import *
+from ....shared_components.sidebar.sidebar import sidebar
 
 from ...layout.layout_state import LayoutState
 
 def header() -> rx.Component:
   return rx.flex(
-    rx.box(style=header_item_style),
-    rx.flex(
+    rx.desktop_only(style=header_item_style),
+    rx.box(
       rx.link(
         "Home",
         href="/",
         style=navbar_item_style,
-        text_decoration=rx.cond(LayoutState.current_page == "/", "underline", "none") # active page
+        color=rx.cond(LayoutState.current_page == "/", "rgb(255,255,50)", "none"), # active page
       ),
       rx.link(
         "Play with the API",
         href="#",
         style=navbar_item_style,
-        text_decoration=rx.cond(LayoutState.current_page == "/theApi", "underline", "none") # active page
+        color=rx.cond(LayoutState.current_page == "/theApi", "rgb(255,255,50)", "none"), # active page
       ),
       rx.link(
-        "About",
-        href="/about",
-        style=navbar_item_style,
-        text_decoration=rx.cond(LayoutState.current_page == "/about", "underline", "none") # active page
-      ),
+      "About",
+      href="/about",
+      style=navbar_item_style,
+      color=rx.cond(LayoutState.current_page == "/about", "rgb(255,255,50)", "none"), # active page
+    ),
       style=[header_item_style, navbar_style],
+    ),
+    rx.mobile_and_tablet(
+      rx.button(
+        rx.icon(tag="hamburger"),
+        on_click=LayoutState.set_sidebar_menu_visible(~LayoutState.sidebar_menu_visible),
+        style=menu_hamburger_btn,
+      ),
+      style=header_item_style,
     ),
     rx.flex(
       rx.link(
@@ -59,6 +68,50 @@ def header() -> rx.Component:
         margin_right="10px",
       ),
       style=[header_item_style, contact_section_style],
+    ),
+    sidebar(
+      rx.box(
+        rx.heading(
+          "Made with",
+          rx.tooltip(
+              rx.image(
+                  src="/favicon.ico",
+                  margin_left="5px",
+                  display="inline",
+              ),
+              label="REFLEX",
+          ),
+          size="md",
+          style=small_navbar_heading,
+        ),
+        rx.box(
+          rx.link(
+            "Home",
+            href="/",
+            style=navbar_item_style,
+            color=rx.cond(LayoutState.current_page == "/", "rgb(255,255,50)", "none"), # active page
+            on_click=LayoutState.set_sidebar_menu_visible(False),
+          ),
+          rx.link(
+            "Play with the API",
+            href="#",
+            style=navbar_item_style,
+            color=rx.cond(LayoutState.current_page == "/theApi", "rgb(255,255,50)", "none"), # active page
+            on_click=LayoutState.set_sidebar_menu_visible(False),
+          ),
+          rx.link(
+            "About",
+            href="/about",
+            style=navbar_item_style,
+            color=rx.cond(LayoutState.current_page == "/about", "rgb(255,255,50)", "none"), # active page
+            on_click=LayoutState.set_sidebar_menu_visible(False),
+          ),
+          style=small_navbar_style,
+        ),
+      ),
+      "left",
+      LayoutState.sidebar_menu_visible,
+      LayoutState.set_sidebar_menu_visible(False),
     ),
     style=header_style,
   )

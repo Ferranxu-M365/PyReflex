@@ -6,9 +6,10 @@ from ...app_state import AppState
 class LayoutState(AppState):
   # Header
   github_header_btn_disabled: bool = True
+  sidebar_menu_visible: bool = False
 
   # Footer
-  github_visible: str = False
+  github_visible: bool = False
 
   def github_btn_handler(self):
     self.set_github_header_btn_disabled(False)

@@ -6,17 +6,38 @@ header_style = {
 }
 
 header_item_style = {
-  "width": "33%",
+  "width": ["50%", "50%", "50%", "33%", "33%"],
 }
 
 navbar_style = {
+  "display": ["none", "none", "none", "flex", "flex"],
   "justify_content": "space-between",
+}
+
+small_navbar_style = {
+  "display": "flex",
+  "flex_direction": "column",
+}
+
+small_navbar_heading = {
+  "margin_bottom": "1em",
+  "text_align": "center",
 }
 
 navbar_item_style = {
   "_hover": {
-    "text-shadow": "1px 1px 2px white",
+    "color": "rgb(255,255,50)",
   }
+}
+
+menu_hamburger_btn = {
+  "background_color": "black",
+  "font_size": "26px",
+  "margin_left": "15px",
+  "_hover": {
+    "background_color": "rgba(255,255,255,0)",
+    "color": "rgb(255,255,50)",
+  },
 }
 
 contact_section_style = {
