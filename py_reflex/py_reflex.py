@@ -8,7 +8,7 @@ from py_reflex.views.about.about import about
 # Add state and page to the app.
 app = rx.App(
   style=style,
-  stylesheets=["custom_styles/footer_styles.css"],
+  stylesheets=["custom_styles/animations.css"],
 )
 
 app.add_page(index, route="/")
