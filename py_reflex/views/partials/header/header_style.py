@@ -3,6 +3,7 @@ header_style = {
   "align_items": "center",
   "height": "100%",
   "padding_right": "15px",
+  "font_size": "18px",
 }
 
 header_item_style = {
